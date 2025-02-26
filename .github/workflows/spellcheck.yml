@@ -1,0 +1,26 @@
+name: linting
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions: {
+  contents: read
+}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  lint-spelling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: '☁️ checkout repository'
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: '🧹 Spellcheck'
+        uses: rojopolis/spellcheck-github-actions@v0
