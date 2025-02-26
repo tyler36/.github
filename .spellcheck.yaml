@@ -1,0 +1,26 @@
+# spellcheck.yaml
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+    ignore-case: true
+  dictionary:
+    wordlists:
+    - .spellcheckwordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  - pyspelling.filters.url:
+  - pyspelling.filters.context:
+      context_visible_first: true
+      delimiters:
+      # Ignore content between `:`, like `:octicons-file-directory-16:`
+      - open: '(?P<open>:+)'
+        close: '(?P=open)'
+  sources:
+  - '**/*.md|!node_modules/|!vendor'
+  default_encoding: utf-8
