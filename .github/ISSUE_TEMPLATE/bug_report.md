@@ -23,11 +23,16 @@ Steps to reproduce the behavior:
 
 A clear and concise description of what you expected to happen.
 
-## Versions
+## Screenshots (if applicable)
 
-OS:
+If applicable, add screenshots to help explain your problem.
 
-Browser:
+## Environment
+
+- OS: <!-- e.g., Windows 11, macOS Ventura -->
+- Browser (if applicable): <!-- e.g., Chrome 120, Firefox 115 -->
+- Node.js version (if applicable): <!-- Use the following command: `node -v` -->
+- Other relevant dependencies: <!-- e.g., React 18, Next.js 14 -->
 
 ## Additional context
 
